@@ -144,15 +144,15 @@
         .center-text {
             text-align: center;
             margin-top: 20px;
+            width: 100%; /* Убедитесь, что блок занимает всю ширину */
         }
         .center-text a {
             color: #003366;
-            text-decoration: none;
-            font-weight: bold;
-            text-decoration: underline;
+            text-decoration: underline; /* Подчеркивание текста */
+            font-weight: bold; /* Жирное начертание */
         }
         .center-text a:hover {
-            text-decoration: none;
+            text-decoration: underline;
         }
         .blue-line {
             width: 100%;
@@ -187,6 +187,18 @@
         }
         .contact-info a:hover {
             text-decoration: underline;
+        }
+        .unsubscribe {
+            text-align: center;
+            margin: 20px 0;
+            width: 100%;
+        }
+        .unsubscribe a {
+            color: #003366;
+            text-decoration: underline;
+        }
+        .unsubscribe a:hover {
+            text-decoration: none;
         }
     </style>
 </head>
@@ -292,6 +304,9 @@
                         <p>Почта: <a href="mailto:sv@bgexpert.ru">sv@bgexpert.ru</a></p>
                         <p>Веб сайт: <a href="https://bgexpert.ru" target="_blank">bgexpert.ru</a></p>
                     </div>
+                </div>
+                <div class="unsubscribe">
+                    <a href="https://example.com/unsubscribe" target="_blank">Отписаться от рассылки</a>
                 </div>
             </section>
         </div>
