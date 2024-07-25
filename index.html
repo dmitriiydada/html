@@ -13,13 +13,12 @@
             color: #333;
         }
         .container {
-            max-width: 100%;
+            max-width: 800px;
             margin: 0 auto;
             padding: 0 20px;
         }
         header {
             display: flex;
-            flex-wrap: wrap;
             justify-content: space-between;
             align-items: center;
             padding: 20px;
@@ -32,41 +31,39 @@
             justify-content: center;
         }
         header img {
-            max-height: 50px;
-            width: auto;
+            height: 50px;
         }
         header .right-logo {
-            max-height: 60px;
+            height: 60px;
         }
         .banner {
             display: flex;
             margin-top: 20px;
-            align-items: stretch; /* Растягиваем элементы по высоте контейнера */
-            height: 300px; /* Устанавливаем фиксированную высоту для баннера */
-            box-sizing: border-box;
         }
         .banner-text-container {
             background-color: #003366;
             color: #fff;
-            padding: 20px;
-            width: 50%; /* Половина ширины контейнера */
-            box-sizing: border-box;
             display: flex;
-            align-items: center; /* Вертикальное выравнивание по центру */
-            height: 100%; /* Растягиваем контейнер по высоте родителя */
+            align-items: center;
+            justify-content: flex-start;
+            padding: 50px;
+            width: 50%;
         }
         .banner-text {
-            font-size: 24px;
+            font-size: 32px;
+            text-align: left;
             line-height: 1.2;
         }
         .banner img {
-            width: 50%; /* Половина ширины контейнера */
-            height: 100%; /* Высота в 100% от родителя */
-            object-fit: cover; /* Картинка покрывает всю высоту без искажения */
+            width: 50%;
+            height: auto;
         }
         .main-content {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
             background-color: #fff;
-            padding: 20px;
+            padding: 40px;
             color: #333;
             border-radius: 10px;
             margin: 20px 0;
@@ -79,16 +76,17 @@
             margin-top: 20px;
         }
         .main-content p {
-            margin: 0 0 20px;
+            margin: 0 20px 20px 0px;
             text-align: left;
         }
         .main-content p strong {
-            color: #003366;
+            color: #003366 !important;
         }
         .product-list {
             display: flex;
             align-items: center;
             margin-bottom: 10px;
+            margin-left: 0px; /* Убираем отступ для выравнивания */
         }
         .product-list .icon {
             width: 40px;
@@ -103,25 +101,39 @@
             font-size: 20px;
         }
         .section-title {
-            color: #003366;
-            margin-top: 20px;
+            color: #003366; /* Синий цвет для заголовков */
         }
-        ol, ul {
-            padding-left: 0;
-            margin-left: 20px;
+        ol {
+            padding-left: 0; /* Убираем отступ слева для нумерованного списка */
+            margin: 0 20px 20px 20px; /* Убираем отступ слева для нумерованного списка */
         }
-        ol li, ul li {
-            margin-bottom: 10px;
+        ol ul.styled-list {
+            padding-left: 20px; /* Отступ слева для вложенного списка */
+            margin-left: 0; /* Убираем дополнительный отступ слева */
         }
-        ul.styled-list {
+        ol li {
+            margin-bottom: 10px; /* Отступ снизу для элементов списка */
+        }
+        ol li ul.styled-list {
+            margin-left: 0; /* Убираем отступ для вложенного списка */
+        }
+        ol li::before {
+            content: ""; /* Убираем символ для элементов списка */
+        }
+        ol li:first-child {
+            margin-bottom: 10px; /* Отступ снизу для первого элемента списка */
+        }
+        .styled-list {
             list-style: none;
             padding: 0;
+            margin-left: 20px; /* Добавляем отступ слева для выравнивания */
         }
-        ul.styled-list li {
+        .styled-list li {
             display: flex;
             align-items: center;
+            margin-bottom: 10px;
         }
-        ul.styled-list li::before {
+        .styled-list li::before {
             content: "\2022";
             color: #003366;
             font-weight: bold;
@@ -132,15 +144,15 @@
         .center-text {
             text-align: center;
             margin-top: 20px;
-            width: 100%;
+            width: 100%; /* Убедитесь, что блок занимает всю ширину */
         }
         .center-text a {
             color: #003366;
-            text-decoration: underline;
-            font-weight: bold;
+            text-decoration: underline; /* Подчеркивание текста */
+            font-weight: bold; /* Жирное начертание */
         }
         .center-text a:hover {
-            text-decoration: none;
+            text-decoration: underline;
         }
         .blue-line {
             width: 100%;
@@ -151,20 +163,20 @@
         }
         .contact-info {
             display: flex;
-            flex-wrap: wrap;
             align-items: center;
             margin: 20px 0;
             padding: 20px;
-            border: 3px solid #003366;
+            border: 3px solid #003366; /* Увеличена толщина рамки */
             border-radius: 10px;
+            width: 100%;
             box-sizing: border-box;
         }
         .contact-info img {
-            height: 70px;
+            height: 70px; /* Увеличен размер логотипа */
             margin-right: 20px;
         }
         .contact-info div {
-            line-height: 1.6;
+            line-height: 1.6; /* Добавлен межстрочный интервал */
         }
         .contact-info p {
             margin: 0;
@@ -188,20 +200,6 @@
         .unsubscribe a:hover {
             text-decoration: none;
         }
-        @media (max-width: 768px) {
-            .banner {
-                flex-direction: column;
-                height: auto; /* Убираем фиксированную высоту для мобильных устройств */
-            }
-            .banner-text-container,
-            .banner img {
-                width: 100%; /* 100% ширины для мобильных устройств */
-                height: auto; /* Высота авто для мобильных устройств */
-            }
-            .banner-text {
-                font-size: 18px; /* Уменьшаем размер текста для мобильных устройств */
-            }
-        }
     </style>
 </head>
 <body>
@@ -223,92 +221,92 @@
             <img src="https://стройэксперт24.рф/wp-content/uploads/2021/reestr-bankovskih-garantij-44-fz-i-223-fz/shhlh.png" alt="Изображение баннера">
         </div>
         <section class="main-content">
-            <p><strong>Добрый день!</strong></p>
-            <p>Я предлагаю Вам, действительно грамотную и квалифицированную помощь в кратчайшие сроки, подберу для Вас самое выгодное и удобное предложение. Вы можете рассчитывать на меня как на надежного партнера, целью которого является долгое, взаимовыгодное сотрудничество. Обращайтесь с любыми вопросами, всегда буду рад на них ответить.</p>
-            <p><strong>Предлагаю помощь в оформлении следующих продуктов:</strong></p>
-            <div class="product-list">
-                <div class="icon">
-                    <i class="fas fa-shield-alt"></i>
+            <strong><p>Добрый день!</strong><br><br>
+                Я предлагаю Вам, действительно грамотную и квалифицированную помощь в кратчайшие сроки, подберу для Вас самое выгодное и удобное предложение. Вы можете рассчитывать на меня как на надежного партнера, целью которого является долгое, взаимовыгодное сотрудничество. Обращайтесь с любыми вопросами, всегда буду рад на них ответить.<br><br>
+                <strong>Предлагаю помощь в оформлении следующих продуктов:</strong><br>
+                <div class="product-list">
+                    <div class="icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    Банковская Гарантия На Участие, Исполнение, Гарантийные Обязательства, Возврат Аванса
                 </div>
-                Банковская Гарантия На Участие, Исполнение, Гарантийные Обязательства, Возврат Аванса
-            </div>
-            <div class="product-list">
-                <div class="icon">
-                    <i class="fas fa-handshake"></i>
+                <div class="product-list">
+                    <div class="icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    Тендерный Займ
                 </div>
-                Тендерный Займ
-            </div>
-            <div class="product-list">
-                <div class="icon">
-                    <i class="fas fa-university"></i>
+                <div class="product-list">
+                    <div class="icon">
+                        <i class="fas fa-university"></i>
+                    </div>
+                    Открытие Расчетного Счета
                 </div>
-                Открытие Расчетного Счета
-            </div>
-            <div class="product-list">
-                <div class="icon">
-                    <i class="fas fa-shield-virus"></i>
+                <div class="product-list">
+                    <div class="icon">
+                        <i class="fas fa-shield-virus"></i>
+                    </div>
+                    Страхование
                 </div>
-                Страхование
-            </div>
-            <div class="product-list">
-                <div class="icon">
-                    <i class="fas fa-file-contract"></i>
+                <div class="product-list">
+                    <div class="icon">
+                        <i class="fas fa-file-contract"></i>
+                    </div>
+                    Кредит Под Исполнение Контракта, Кредит Для Пополнения Оборотных Средств
                 </div>
-                Кредит Под Исполнение Контракта, Кредит Для Пополнения Оборотных Средств
-            </div>
-            <div class="product-list">
-                <div class="icon">
-                    <i class="fas fa-globe"></i>
+                <div class="product-list">
+                    <div class="icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    ВЭД
                 </div>
-                ВЭД
-            </div>
-            <p><strong class="section-title">Преимущества работы с нами:</strong></p>
-            <ul class="styled-list">
-                <li>Выгодные ставки</li>
-                <li>Быстрые сроки выпуска документов</li>
-                <li>Верное оформление заявок</li>
-                <li>Подготовка макетов гарантий</li>
-                <li>Оформление всех последующих БГ, без повторной отправки перечня документов</li>
-                <li>Постоянная поддержка</li>
-                <li>Решение сложно выполнимых задач</li>
-                <li>Постоянное отслеживание изменений законодательства в рамках банковских продуктов</li>
-                <li>Подбор самых выгодных ставок на рынке</li>
-            </ul>
-            <p><strong class="section-title">Принцип оформления БГ</strong></p>
-            <ol>
-                <li>Направляете документы по списку:
-                    <ul class="styled-list">
-                        <li>Устав</li>
-                        <li>Решение или приказ о назначении директора</li>
-                        <li>Карточка компании</li>
-                        <li>Паспорт директора и учредителей</li>
-                        <li>Бухгалтерская отчетность за 2-й квартал 2024 года (форма 1,2)</li>
-                        <li>Бухгалтерская отчетность за 2023 год (форма 1,2) с квитанцией ИФНС о приеме</li>
-                    </ul>
-                </li>
-                <li>Я оформляю заявку</li>
-                <li>Вы подписываете заявку ЭЦП и получаете предложение от банков в кратчайшие сроки</li>
-            </ol>
-            <p><strong class="section-title">Жду от Вас обратную связь!</strong></p>
-            <div class="center-text">
-                Более подробно с нашими услугами можно ознакомиться на нашем <a href="https://bgexpert.ru/catalog/uslugi-1710860200999" target="_blank">САЙТЕ</a>
-            </div>
-            <div class="blue-line"></div>
-            <div class="contact-info">
-                <img src="https://i.ibb.co/CwZ9xkX/logo-nas.jpg" alt="Логотип">
-                <div>
-                    <p><strong>Шерстнев Сергей Владимирович</strong></p>
-                    <p>Специалист по продажам отдела корпоративного финансирования</p>
-                    <p>Моб. <a href="tel:+79637745611">+7 (963) 774-56-11</a></p>
-                    <p>Тел: <a href="tel:+74954892544">+7 (495) 489-25-44</a></p>
-                    <p>Почта: <a href="mailto:sv@bgexpert.ru">sv@bgexpert.ru</a></p>
-                    <p>Веб сайт: <a href="https://bgexpert.ru" target="_blank">bgexpert.ru</a></p>
+                <br>
+                <strong class="section-title">Работая с вашей компанией, я готов предложить:</strong>
+                <ul class="styled-list">
+                    <li>максимально короткий срок выпуска документов</li>
+                    <li>верное оформление заявок</li>
+                    <li>подготовка макетов гарантий</li>
+                    <li>оформление всех последующих БГ, без повторной отправки перечня документов</li>
+                    <li>постоянная поддержка</li>
+                    <li>решение сложно выполнимых задач</li>
+                    <li>постоянное отслеживание изменений законодательства в рамках банковских продуктов</li>
+                    <li>подбор самых выгодных ставок на рынке</li>
+                </ul>
+                <strong class="section-title">Принцип оформления БГ</strong><br>
+                <ol>
+                    <li>Направляете документы по списку:
+                        <ul class="styled-list"><br>
+                            <li>Устав</li>
+                            <li>Решение или приказ о назначении директора</li>
+                            <li>Карточка компании</li>
+                            <li>Паспорт директора и учредителей</li>
+                            <li>Бухгалтерская отчетность за 2-й квартал 2024 года (форма 1,2)</li>
+                            <li>Бухгалтерская отчетность за 2023 год (форма 1,2) с квитанцией ИФНС о приеме</li>
+                        </ul>
+                    </li>
+                    <li>Я оформляю заявку</li>
+                    <li>Вы подписываете заявку ЭЦП и получаете предложение от банков в кратчайшие сроки</li>
+                </ol>
+                <strong class="section-title">Жду от Вас обратную связь!</strong>
+                <div class="center-text">
+                    Более подробно с нашими услугами можно ознакомиться на нашем <a href="https://bgexpert.ru/catalog/uslugi-1710860200999" target="_blank">САЙТЕ</a>
                 </div>
-            </div>
-            <div class="unsubscribe">
-                <a href="https://example.com/unsubscribe" target="_blank">Отписаться от рассылки</a>
-            </div>
-        </section>
-    </div>
-</body>
+                <div class="blue-line"></div>
+                <div class="contact-info">
+                    <img src="https://i.ibb.co/CwZ9xkX/logo-nas.jpg" alt="Логотип">
+                    <div>
+                        <p><strong>Шерстнев Сергей Владимирович</strong></p>
+                        <p>Специалист по продажам отдела корпоративного финансирования</p>
+                        <p>Моб. <a href="tel:+79637745611">+7 (963) 774-56-11</a></p>
+                        <p>Тел: <a href="tel:+74954892544">+7 (495) 489-25-44</a></p>
+                        <p>Почта: <a href="mailto:sv@bgexpert.ru">sv@bgexpert.ru</a></p>
+                        <p>Веб сайт: <a href="https://bgexpert.ru" target="_blank">bgexpert.ru</a></p>
+                    </div>
+                </div>
+                <div class="unsubscribe">
+                    <a href="https://example.com/unsubscribe" target="_blank">Отписаться от рассылки</a>
+                </div>
+            </section>
+        </div>
+    </body>
 </html>
