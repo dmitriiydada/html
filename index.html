@@ -13,12 +13,11 @@
             color: #003366;
         }
         .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-            color: #fff;
+             max-width: 100%;
+             min-width: 800px; /* Устанавливаем минимальную ширину для всего контента */
+             margin: 0 auto;
+             padding: 0 20px;
+             box-sizing: border-box;
         }
         header {
             display: flex;
@@ -41,30 +40,30 @@
         }
         .banner {
             display: flex;
-            flex-wrap: wrap; /* Позволяет элементам переноситься на следующую строку при необходимости */
-            align-items: center; /* Выравнивает элементы по вертикали по центру */
-            width: 100%; /* Обеспечивает, что баннер занимает всю ширину контейнера */
-            box-sizing: border-box; /* Учитывает границы и отступы в расчете ширины элемента */
+            align-items: stretch; /* Выровнять элементы по высоте, растягивая их до одинаковой высоты */
+            width: 100%;
+            box-sizing: border-box;
             margin-top: 20px;
         }
         .banner-text-container {
             background-color: #003366;
             color: #fff;
             padding: 50px;
-            box-sizing: border-box; /* Учитывает внутренние отступы в ширине элемента */
-            flex: 1 1 50%; /* Позволяет контейнеру текста занимать 50% ширины родительского контейнера */
+            box-sizing: border-box;
+            flex: 1; /* Занимает доступное пространство */
+            display: flex;
+            align-items: center; /* Вертикальное выравнивание текста */
         }
         .banner-text {
             font-size: 32px;
-            text-align: left;
             line-height: 1.2;
         }
         .banner img {
-            max-width: 50%; /* Устанавливаем максимальную ширину картинки в 50% от ширины контейнера */
-            height: auto;
-            max-height: 300px; /* Ограничиваем максимальную высоту картинки */
-            flex: 1 1 50%; /* Позволяет изображению занимать 50% ширины родительского контейнера */
-            object-fit: cover; /* Обеспечивает, чтобы изображение не деформировалось */
+            max-width: 50%; /* Ограничивает ширину изображения до 100% контейнера */
+            height: auto; /* Сохраняет пропорции изображения */
+            object-fit: cover; /* Обеспечивает сохранение пропорций изображения */
+            max-height: 100%; /* Устанавливает максимальную высоту в пределах контейнера */
+            flex: 1; /* Занимает доступное пространство */
         }
         .main-content {
             display: flex;
