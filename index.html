@@ -12,11 +12,13 @@
             background-color: #fff;
             color: #333;
         }
+
         .container {
-            max-width: 800px;
+            width: 800px; /* Фиксированная ширина */
             margin: 0 auto;
             padding: 0 20px;
         }
+
         header {
             display: flex;
             justify-content: space-between;
@@ -25,17 +27,21 @@
             background-color: #fff;
             border-bottom: 2px solid #003366;
         }
+
         header a {
             flex: 1;
             display: flex;
             justify-content: center;
         }
+
         header img {
             height: 50px;
         }
+
         header .right-logo {
             height: 60px;
         }
+
         .banner {
             display: flex;
             align-items: stretch; /* Выровнять элементы по высоте, растягивая их до одинаковой высоты */
@@ -43,6 +49,7 @@
             box-sizing: border-box;
             margin-top: 20px;
         }
+
         .banner-text-container {
             background-color: #003366;
             color: #fff;
@@ -52,12 +59,14 @@
             display: flex;
             align-items: center; /* Вертикальное выравнивание текста */
         }
+
         .banner-text {
             font-size: 32px;
             line-height: 1.2;
         }
+
         .banner img {
-            max-width: 50%; /* Ограничивает ширину изображения до 100% контейнера */
+            max-width: 50%; /* Ограничивает ширину изображения до 50% контейнера */
             height: auto; /* Сохраняет пропорции изображения */
             object-fit: cover; /* Обеспечивает сохранение пропорций изображения */
             max-height: 100%; /* Устанавливает максимальную высоту в пределах контейнера */
