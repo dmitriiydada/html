@@ -13,14 +13,12 @@
             color: #333;
         }
         .container {
-            max-width: 100%;
+            max-width: 800px;
             margin: 0 auto;
             padding: 0 20px;
-            box-sizing: border-box;
         }
         header {
             display: flex;
-            flex-wrap: wrap;
             justify-content: space-between;
             align-items: center;
             padding: 20px;
@@ -40,9 +38,7 @@
         }
         .banner {
             display: flex;
-            flex-wrap: wrap;
             margin-top: 20px;
-            gap: 10px; /* Добавляем промежуток между элементами */
         }
         .banner-text-container {
             background-color: #003366;
@@ -50,17 +46,16 @@
             display: flex;
             align-items: center;
             justify-content: flex-start;
-            padding: 20px; /* Уменьшаем отступы для мобильных устройств */
-            width: 100%;
-            box-sizing: border-box;
+            padding: 50px;
+            width: 50%;
         }
         .banner-text {
-            font-size: 24px; /* Уменьшаем размер шрифта для мобильных устройств */
+            font-size: 32px;
             text-align: left;
             line-height: 1.2;
         }
         .banner img {
-            width: 100%;
+            width: 50%;
             height: auto;
         }
         .main-content {
@@ -68,13 +63,11 @@
             flex-direction: column;
             align-items: flex-start;
             background-color: #fff;
-            padding: 20px; /* Уменьшаем отступы для мобильных устройств */
+            padding: 40px;
             color: #333;
             border-radius: 10px;
             margin: 20px 0;
             border: 1px solid #ccc;
-            width: 100%;
-            box-sizing: border-box;
         }
         .main-content img {
             max-width: 100%;
@@ -83,7 +76,7 @@
             margin-top: 20px;
         }
         .main-content p {
-            margin: 0 0 20px 0; /* Убираем правый отступ */
+            margin: 0 20px 20px 0px;
             text-align: left;
         }
         .main-content p strong {
@@ -93,11 +86,11 @@
             display: flex;
             align-items: center;
             margin-bottom: 10px;
-            margin-left: 0px;
+            margin-left: 0px; /* Убираем отступ для выравнивания */
         }
         .product-list .icon {
-            width: 30px; /* Уменьшаем размер иконок для мобильных устройств */
-            height: 30px;
+            width: 40px;
+            height: 40px;
             margin-right: 10px;
             border-radius: 10px;
             background-color: #003366;
@@ -105,36 +98,35 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 16px; /* Уменьшаем размер шрифта иконок */
+            font-size: 20px;
         }
         .section-title {
             color: #003366; /* Синий цвет для заголовков */
-            font-size: 24px; /* Уменьшаем размер шрифта заголовков для мобильных устройств */
         }
         ol {
-            padding-left: 0;
-            margin: 0 0 20px 0; /* Убираем левый отступ и правый отступ */
+            padding-left: 0; /* Убираем отступ слева для нумерованного списка */
+            margin: 0 20px 20px 20px; /* Убираем отступ слева для нумерованного списка */
         }
         ol ul.styled-list {
-            padding-left: 20px;
-            margin-left: 0;
+            padding-left: 20px; /* Отступ слева для вложенного списка */
+            margin-left: 0; /* Убираем дополнительный отступ слева */
         }
         ol li {
-            margin-bottom: 10px;
+            margin-bottom: 10px; /* Отступ снизу для элементов списка */
         }
         ol li ul.styled-list {
-            margin-left: 0;
+            margin-left: 0; /* Убираем отступ для вложенного списка */
         }
         ol li::before {
-            content: "";
+            content: ""; /* Убираем символ для элементов списка */
         }
         ol li:first-child {
-            margin-bottom: 10px;
+            margin-bottom: 10px; /* Отступ снизу для первого элемента списка */
         }
         .styled-list {
             list-style: none;
             padding: 0;
-            margin-left: 20px;
+            margin-left: 20px; /* Добавляем отступ слева для выравнивания */
         }
         .styled-list li {
             display: flex;
@@ -152,12 +144,12 @@
         .center-text {
             text-align: center;
             margin-top: 20px;
-            width: 100%;
+            width: 100%; /* Убедитесь, что блок занимает всю ширину */
         }
         .center-text a {
             color: #003366;
-            text-decoration: underline;
-            font-weight: bold;
+            text-decoration: underline; /* Подчеркивание текста */
+            font-weight: bold; /* Жирное начертание */
         }
         .center-text a:hover {
             text-decoration: underline;
@@ -171,21 +163,20 @@
         }
         .contact-info {
             display: flex;
-            flex-wrap: wrap; /* Позволяем элементам переходить на новую строку */
             align-items: center;
             margin: 20px 0;
             padding: 20px;
-            border: 3px solid #003366;
+            border: 3px solid #003366; /* Увеличена толщина рамки */
             border-radius: 10px;
             width: 100%;
             box-sizing: border-box;
         }
         .contact-info img {
-            height: 50px; /* Уменьшаем размер логотипа для мобильных устройств */
+            height: 70px; /* Увеличен размер логотипа */
             margin-right: 20px;
         }
         .contact-info div {
-            line-height: 1.6;
+            line-height: 1.6; /* Добавлен межстрочный интервал */
         }
         .contact-info p {
             margin: 0;
@@ -208,59 +199,6 @@
         }
         .unsubscribe a:hover {
             text-decoration: none;
-        }
-
-        /* Медиазапросы для адаптивности */
-        @media (max-width: 768px) {
-            .banner {
-                flex-direction: column;
-            }
-            .banner-text-container {
-                padding: 20px;
-                width: 100%;
-                box-sizing: border-box;
-            }
-            .banner-text {
-                font-size: 20px; /* Уменьшаем размер шрифта для мобильных устройств */
-            }
-            .product-list {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-            .product-list .icon {
-                width: 25px; /* Уменьшаем размер иконок для мобильных устройств */
-                height: 25px;
-                font-size: 14px; /* Уменьшаем размер шрифта иконок */
-            }
-            .main-content {
-                padding: 20px;
-            }
-            .section-title {
-                font-size: 20px; /* Уменьшаем размер шрифта заголовков для мобильных устройств */
-            }
-            .contact-info {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-            .contact-info img {
-                height: 40px; /* Уменьшаем размер логотипа для мобильных устройств */
-                margin-right: 0;
-                margin-bottom: 10px;
-            }
-        }
-        @media (max-width: 480px) {
-            .banner-text-container {
-                padding: 15px;
-            }
-            .banner-text {
-                font-size: 18px; /* Уменьшаем размер шрифта для мобильных устройств */
-            }
-            .product-list {
-                font-size: 14px; /* Уменьшаем размер шрифта для мобильных устройств */
-            }
-            .section-title {
-                font-size: 18px; /* Уменьшаем размер шрифта заголовков для мобильных устройств */
-            }
         }
     </style>
 </head>
