@@ -38,16 +38,18 @@
         }
         .banner {
             display: flex;
+            flex-wrap: wrap; /* Позволяет элементам переноситься на следующую строку при необходимости */
+            align-items: center; /* Выравнивает элементы по вертикали по центру */
+            width: 100%; /* Обеспечивает, что баннер занимает всю ширину контейнера */
+            box-sizing: border-box; /* Учитывает границы и отступы в расчете ширины элемента */
             margin-top: 20px;
         }
         .banner-text-container {
             background-color: #003366;
             color: #fff;
-            display: flex;
-            align-items: center;
-            justify-content: flex-start;
             padding: 50px;
-            width: 50%;
+            box-sizing: border-box; /* Учитывает внутренние отступы в ширине элемента */
+            flex: 1 1 50%; /* Позволяет контейнеру текста занимать 50% ширины родительского контейнера */
         }
         .banner-text {
             font-size: 32px;
@@ -55,8 +57,11 @@
             line-height: 1.2;
         }
         .banner img {
-            width: 50%;
+            max-width: 50%; /* Устанавливаем максимальную ширину картинки в 50% от ширины контейнера */
             height: auto;
+            max-height: 300px; /* Ограничиваем максимальную высоту картинки */
+            flex: 1 1 50%; /* Позволяет изображению занимать 50% ширины родительского контейнера */
+            object-fit: cover; /* Обеспечивает, чтобы изображение не деформировалось */
         }
         .main-content {
             display: flex;
