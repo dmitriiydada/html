@@ -6,215 +6,286 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body {
-            font-family: 'Roboto', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #fff;
-            color: #333;
-        }
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+    color: #333;
+}
 
-        .container {
-            width: 800px; /* Фиксированная ширина */
-            margin: 0 auto;
-            padding: 0 20px;
-        }
+.container {
+    width: 100%;
+    max-width: 800px; /* Максимальная ширина */
+    margin: 0 auto;
+    padding: 0 20px;
+}
 
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px;
-            background-color: #fff;
-            border-bottom: 2px solid #003366;
-        }
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #fff;
+    border-bottom: 2px solid #003366;
+}
 
-        header a {
-            flex: 1;
-            display: flex;
-            justify-content: center;
-        }
+header a {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
 
-        header img {
-            height: 50px;
-        }
+header img {
+    height: 50px;
+}
 
-        header .right-logo {
-            height: 60px;
-        }
+header .right-logo {
+    height: 60px;
+}
 
-        .banner {
-            display: flex;
-            align-items: stretch; /* Выровнять элементы по высоте, растягивая их до одинаковой высоты */
-            width: 100%;
-            box-sizing: border-box;
-            margin-top: 20px;
-        }
+.banner {
+    display: flex;
+    align-items: stretch; /* Выровнять элементы по высоте, растягивая их до одинаковой высоты */
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 20px;
+    flex-wrap: wrap; /* Добавляем обертку для мобильных устройств */
+}
 
-        .banner-text-container {
-            background-color: #003366;
-            color: #fff;
-            padding: 50px;
-            box-sizing: border-box;
-            flex: 1; /* Занимает доступное пространство */
-            display: flex;
-            align-items: center; /* Вертикальное выравнивание текста */
-        }
+.banner-text-container {
+    background-color: #003366;
+    color: #fff;
+    padding: 50px;
+    box-sizing: border-box;
+    flex: 1; /* Занимает доступное пространство */
+    display: flex;
+    align-items: center; /* Вертикальное выравнивание текста */
+}
 
-        .banner-text {
-            font-size: 32px;
-            line-height: 1.2;
-        }
+.banner-text {
+    font-size: 32px;
+    line-height: 1.2;
+}
 
-        .banner img {
-            max-width: 50%; /* Ограничивает ширину изображения до 50% контейнера */
-            height: auto; /* Сохраняет пропорции изображения */
-            object-fit: cover; /* Обеспечивает сохранение пропорций изображения */
-            max-height: 100%; /* Устанавливает максимальную высоту в пределах контейнера */
-            flex: 1; /* Занимает доступное пространство */
-        }
-        .main-content {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            background-color: #fff;
-            padding: 40px;
-            color: #333;
-            border-radius: 10px;
-            margin: 20px 0;
-            border: 1px solid #ccc;
-        }
-        .main-content img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 10px;
-            margin-top: 20px;
-        }
-        .main-content p {
-            margin: 0 20px 20px 0px;
-            text-align: left;
-        }
-        .main-content p strong {
-            color: #003366 !important;
-        }
-        .product-list {
-            display: flex;
-            align-items: center;
-            margin-bottom: 10px;
-            margin-left: 0px; /* Убираем отступ для выравнивания */
-            line-height: 1.6; /* Добавляем межстрочный интервал */
-        }
-        .product-list .icon {
-            width: 40px;
-            height: 40px;
-            margin-right: 10px;
-            border-radius: 10px;
-            background-color: #003366;
-            color: #fff;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 20px;
-        }
-        .section-title {
-            color: #003366; /* Синий цвет для заголовков */
-        }
-        ol {
-            padding-left: 0; /* Убираем отступ слева для нумерованного списка */
-            margin: 0 20px 20px 20px; /* Убираем отступ слева для нумерованного списка */
-        }
-        ol ul.styled-list {
-            padding-left: 20px; /* Отступ слева для вложенного списка */
-            margin-left: 0; /* Убираем дополнительный отступ слева */
-        }
-        ol li {
-            margin-bottom: 10px; /* Отступ снизу для элементов списка */
-        }
-        ol li ul.styled-list {
-            margin-left: 0; /* Убираем отступ для вложенного списка */
-        }
-        ol li::before {
-            content: ""; /* Убираем символ для элементов списка */
-        }
-        ol li:first-child {
-            margin-bottom: 10px; /* Отступ снизу для первого элемента списка */
-        }
-        .styled-list {
-            list-style: none;
-            padding: 0;
-            margin-left: 20px; /* Добавляем отступ слева для выравнивания */
-        }
-        .styled-list li {
-            display: flex;
-            align-items: center;
-            margin-bottom: 10px;
-        }
-        .styled-list li::before {
-            content: "\2022";
-            color: #003366;
-            font-weight: bold;
-            display: inline-block;
-            width: 1em;
-            margin-left: -1em;
-        }
-        .center-text {
-            text-align: center;
-            margin-top: 20px;
-            width: 100%; /* Убедитесь, что блок занимает всю ширину */
-        }
-        .center-text a {
-            color: #003366;
-            text-decoration: underline; /* Подчеркивание текста */
-            font-weight: bold; /* Жирное начертание */
-        }
-        .center-text a:hover {
-            text-decoration: underline;
-        }
-        .blue-line {
-            width: 100%;
-            height: 3px;
-            background-color: #003366;
-            margin: 20px 0;
-            border-radius: 3px;
-        }
-        .contact-info {
-            display: flex;
-            align-items: center;
-            margin: 20px 0;
-            padding: 20px;
-            border: 3px solid #003366; /* Увеличена толщина рамки */
-            border-radius: 10px;
-            width: 100%;
-            box-sizing: border-box;
-        }
-        .contact-info img {
-            height: 70px; /* Увеличен размер логотипа */
-            margin-right: 20px;
-        }
-        .contact-info div {
-            line-height: 1.6; /* Добавлен межстрочный интервал */
-        }
-        .contact-info p {
-            margin: 0;
-        }
-        .contact-info a {
-            color: #003366;
-            text-decoration: none;
-        }
-        .contact-info a:hover {
-            text-decoration: underline;
-        }
-        .unsubscribe {
-            text-align: center;
-            margin: 20px 0;
-            width: 100%;
-        }
-        .unsubscribe a {
-            color: #003366;
-            text-decoration: underline;
-        }
-        .unsubscribe a:hover {
-            text-decoration: none;
-        }
+.banner img {
+    max-width: 100%; /* Ограничивает ширину изображения до 100% контейнера */
+    height: auto; /* Сохраняет пропорции изображения */
+    object-fit: cover; /* Обеспечивает сохранение пропорций изображения */
+    max-height: 100%; /* Устанавливает максимальную высоту в пределах контейнера */
+    flex: 1; /* Занимает доступное пространство */
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: #fff;
+    padding: 40px;
+    color: #333;
+    border-radius: 10px;
+    margin: 20px 0;
+    border: 1px solid #ccc;
+}
+
+.main-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.main-content p {
+    margin: 0 20px 20px 0px;
+    text-align: left;
+}
+
+.main-content p strong {
+    color: #003366 !important;
+}
+
+.product-list {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    margin-left: 0px; /* Убираем отступ для выравнивания */
+    line-height: 1.6; /* Добавляем межстрочный интервал */
+}
+
+.product-list .icon {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+    border-radius: 10px;
+    background-color: #003366;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+}
+
+.section-title {
+    color: #003366; /* Синий цвет для заголовков */
+}
+
+ol {
+    padding-left: 0; /* Убираем отступ слева для нумерованного списка */
+    margin: 0 20px 20px 20px; /* Убираем отступ слева для нумерованного списка */
+}
+
+ol ul.styled-list {
+    padding-left: 20px; /* Отступ слева для вложенного списка */
+    margin-left: 0; /* Убираем дополнительный отступ слева */
+}
+
+ol li {
+    margin-bottom: 10px; /* Отступ снизу для элементов списка */
+}
+
+ol li ul.styled-list {
+    margin-left: 0; /* Убираем отступ для вложенного списка */
+}
+
+ol li::before {
+    content: ""; /* Убираем символ для элементов списка */
+}
+
+ol li:first-child {
+    margin-bottom: 10px; /* Отступ снизу для первого элемента списка */
+}
+
+.styled-list {
+    list-style: none;
+    padding: 0;
+    margin-left: 20px; /* Добавляем отступ слева для выравнивания */
+}
+
+.styled-list li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.styled-list li::before {
+    content: "\2022";
+    color: #003366;
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+}
+
+.center-text {
+    text-align: center;
+    margin-top: 20px;
+    width: 100%; /* Убедитесь, что блок занимает всю ширину */
+}
+
+.center-text a {
+    color: #003366;
+    text-decoration: underline; /* Подчеркивание текста */
+    font-weight: bold; /* Жирное начертание */
+}
+
+.center-text a:hover {
+    text-decoration: underline;
+}
+
+.blue-line {
+    width: 100%;
+    height: 3px;
+    background-color: #003366;
+    margin: 20px 0;
+    border-radius: 3px;
+}
+
+.contact-info {
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+    padding: 20px;
+    border: 3px solid #003366; /* Увеличена толщина рамки */
+    border-radius: 10px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.contact-info img {
+    height: 70px; /* Увеличен размер логотипа */
+    margin-right: 20px;
+}
+
+.contact-info div {
+    line-height: 1.6; /* Добавлен межстрочный интервал */
+}
+
+.contact-info p {
+    margin: 0;
+}
+
+.contact-info a {
+    color: #003366;
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+.unsubscribe {
+    text-align: center;
+    margin: 20px 0;
+    width: 100%;
+}
+
+.unsubscribe a {
+    color: #003366;
+    text-decoration: underline;
+}
+
+.unsubscribe a:hover {
+    text-decoration: none;
+}
+
+/* Медиазапросы для мобильных устройств */
+@media (max-width: 768px) {
+    .banner-text-container {
+        padding: 20px;
+    }
+
+    .banner-text {
+        font-size: 24px;
+    }
+
+    .main-content {
+        padding: 20px;
+    }
+
+    .product-list {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .product-list .icon {
+        margin-bottom: 10px;
+    }
+
+    .contact-info {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .contact-info img {
+        margin-bottom: 20px;
+    }
+}
+
+/* Стили для выделения текста */
+.highlighted-text {
+    font-weight: bold;
+    color: #003366;
+    font-size: 18px; /* Установите нужный размер текста */
+}
     </style>
 </head>
 <body>
@@ -228,91 +299,88 @@
             <img src="https://стройэксперт24.рф/wp-content/uploads/2021/reestr-bankovskih-garantij-44-fz-i-223-fz/shhlh.png" alt="Изображение баннера">
         </div>
         <section class="main-content">
-            <strong><p>Добрый день!</strong><br><br>
-                Грамотная и квалифицированная помощь в кратчайшие сроки, подберем для Вас самое выгодное и удобное предложение. Вы можете рассчитывать на нас как на надежных партнеров, целью которых является долгое, взаимовыгодное сотрудничество. Обращайтесь с любыми вопросами, всегда будем рады на них ответить.<br><br>
-                <strong>Предлагаем помощь в оформлении следующих продуктов:</strong><br>
-                <div class="product-list">
-                    <div class="icon">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
-                    Банковские гарантии всех видов
+            <p class="highlighted-text">Добрый день!</p>
+            <p>Грамотная и квалифицированная помощь в кратчайшие сроки, подберем для Вас самое выгодное и удобное предложение. Вы можете рассчитывать на нас как на надежных партнеров, целью которых является долгое, взаимовыгодное сотрудничество. Обращайтесь с любыми вопросами, всегда будем рады на них ответить.</p>
+            <p class="highlighted-text">Предлагаем помощь в оформлении следующих продуктов:</p>
+            <div class="product-list">
+                <div class="icon">
+                    <i class="fas fa-shield-alt"></i>
                 </div>
-                <div class="product-list">
-                    <div class="icon">
-                        <i class="fas fa-handshake"></i>
-                    </div>
-                    Кредитование для бизнеса/тендерные займы
+                Банковские гарантии всех видов
+            </div>
+            <div class="product-list">
+                <div class="icon">
+                    <i class="fas fa-handshake"></i>
                 </div>
-                <div class="product-list">
-                    <div class="icon">
-                        <i class="fas fa-shield-virus"></i>
-                    </div>
-                    Страхование
+                Кредитование для бизнеса/тендерные займы
+            </div>
+            <div class="product-list">
+                <div class="icon">
+                    <i class="fas fa-shield-virus"></i>
                 </div>
-                <div class="product-list">
-                    <div class="icon">
-                        <i class="fas fa-globe"></i>
-                    </div>
-                    ВЭД
+                Страхование
+            </div>
+            <div class="product-list">
+                <div class="icon">
+                    <i class="fas fa-globe"></i>
                 </div>
-                <div class="product-list">
-                    <div class="icon">
-                        <i class="fas fa-car"></i>
-                    </div>
-                    Лизинг
+                ВЭД
+            </div>
+            <div class="product-list">
+                <div class="icon">
+                    <i class="fas fa-car"></i>
                 </div>
-                <div class="product-list">
-                    <div class="icon">
-                        <i class="fas fa-university"></i>
-                    </div>
-                    Расчетные счета
+                Лизинг
+            </div>
+            <div class="product-list">
+                <div class="icon">
+                    <i class="fas fa-university"></i>
                 </div>
-                <br>
-                <strong><p>Работая с вашей компанией, мы готовы предложить:</strong><br><br>
-                	Выбор из множества наших банков - партнеров учитывая Вашу специфику и финансовое положение, что позволит сэкономить время и деньги.<br>
-                Без визита в банк, без открытия расчетных счетов и никаких дополнительных, скрытых комиссий.
-                <ul class="styled-list">
-                    <li>верное оформление заявок
-</li>
-                    <li>подготовка макетов гарантий</li>
-                    <li>оформление всех последующих БГ, без повторной отправки перечня документов</li>
-                    <li>постоянная поддержка</li>
-                    <li>решение сложно выполнимых задач</li>
-                    <li>постоянное отслеживание изменений законодательства в рамках банковских продуктов</li>
-                    <li>подбор самых выгодных ставок на рынке</li>
-                </ul>
-                <strong class="section-title">Принцип оформления БГ</strong><br>
-                <ol>
-                    <li>Направляете документы по списку:
-                        <ul class="styled-list"><br>
-                            <li>Устав</li>
-                            <li>Решение или приказ о назначении директора</li>
-                            <li>Карточка компании</li>
-                            <li>Паспорт директора и учредителей</li>
-                            <li>Бухгалтерская отчетность за 2-й квартал 2024 года (форма 1,2)</li>
-                            <li>Бухгалтерская отчетность за 2023 год (форма 1,2) с квитанцией ИФНС о приеме</li>
-                        </ul>
-                    </li>
-                    <li>Мы оформляем заявку</li>
-                    <li>Вы подписываете заявку ЭЦП и получаете предложение от банков в кратчайшие сроки</li>
-                </ol>
-                <strong class="section-title">Ждем от Вас обратную связь!</strong>
-                <div class="center-text">
-                    Более подробно с нашими услугами можно ознакомиться на нашем <a href="https://bgexpert.ru/">САЙТЕ</a>
+                Расчетные счета
+            </div>
+            <p class="highlighted-text">Работая с вашей компанией, мы готовы предложить:</p>
+            <p>Выбор из множества наших банков - партнеров учитывая Вашу специфику и финансовое положение, что позволит сэкономить время и деньги. Без визита в банк, без открытия расчетных счетов и никаких дополнительных, скрытых комиссий.</p>
+            <ul class="styled-list">
+                <li>верное оформление заявок</li>
+                <li>подготовка макетов гарантий</li>
+                <li>оформление всех последующих БГ, без повторной отправки перечня документов</li>
+                <li>постоянная поддержка</li>
+                <li>решение сложно выполнимых задач</li>
+                <li>постоянное отслеживание изменений законодательства в рамках банковских продуктов</li>
+                <li>подбор самых выгодных ставок на рынке</li>
+            </ul>
+            <p class="highlighted-text">Принцип оформления БГ</p>
+            <ol>
+                <li>Направляете документы по списку:
+                    <ul class="styled-list">
+                        <li>Устав</li>
+                        <li>Решение или приказ о назначении директора</li>
+                        <li>Карточка компании</li>
+                        <li>Паспорт директора и учредителей</li>
+                        <li>Бухгалтерская отчетность за 2-й квартал 2024 года (форма 1,2)</li>
+                        <li>Бухгалтерская отчетность за 2023 год (форма 1,2) с квитанцией ИФНС о приеме</li>
+                    </ul>
+                </li>
+                <li>Мы оформляем заявку</li>
+                <li>Вы подписываете заявку ЭЦП и получаете предложение от банков в кратчайшие сроки</li>
+            </ol>
+            <p class="highlighted-text">Ждем от Вас обратную связь!</p>
+            <div class="center-text">
+                Более подробно с нашими услугами можно ознакомиться на нашем <a href="https://bgexpert.ru/">САЙТЕ</a>
+            </div>
+            <div class="blue-line"></div>
+            <div class="contact-info">
+                <img src="https://i.ibb.co/dtkJVkg/bg-expert-logo-bg-expert-black-1.png" alt="Логотип">
+                <div>
+                    <p><strong>Шерстнев Сергей Владимирович</strong></p>
+                    <p>Специалист по продажам отдела корпоративного финансирования</p>
+                    <p>Моб. <a href="tel:+79637745611">+7 (963) 774-56-11</a></p>
+                    <p>Тел: <a href="tel:+74954892544">+7 (495) 489-25-44</a></p>
+                    <p>Почта: <a href="mailto:sv@bgexpert.ru">sv@bgexpert.ru</a></p>
+                    <p>Веб сайт: <a href="https://bgexpert.ru" target="_blank">bgexpert.ru</a></p>
                 </div>
-                <div class="blue-line"></div>
-                <div class="contact-info">
-                    <img src="https://i.ibb.co/dtkJVkg/bg-expert-logo-bg-expert-black-1.png" alt="Логотип">
-                    <div>
-                        <p><strong>Шерстнев Сергей Владимирович</strong></p>
-                        <p>Специалист по продажам отдела корпоративного финансирования</p>
-                        <p>Моб. <a href="tel:+79637745611">+7 (963) 774-56-11</a></p>
-                        <p>Тел: <a href="tel:+74954892544">+7 (495) 489-25-44</a></p>
-                        <p>Почта: <a href="mailto:sv@bgexpert.ru">sv@bgexpert.ru</a></p>
-                        <p>Веб сайт: <a href="https://bgexpert.ru" target="_blank">bgexpert.ru</a></p>
-                    </div>
-                </div>
-            </section>
-        </div>
-    </body>
+            </div>
+        </section>
+    </div>
+</body>
 </html>
